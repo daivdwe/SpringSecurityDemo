@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>SpringSecurity</title>
@@ -7,7 +7,8 @@
     <link href="/favicon.svg" rel="icon" type="image/svg+xml">
 </head>
 <body>
-<h1>This is the private page - so hopefully you are logged in 😉</h1>
+<h1 th:utext="'Hi ' + ${name} + '!'"/>
+<h2>This is the private page - so hopefully you are logged in 😉</h2>
 <button onclick="location.href='public'">Go public</button>
 <button onclick="location.href='logout'">Logout</button>
 </body>
