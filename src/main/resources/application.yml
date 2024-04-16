@@ -1,3 +1,21 @@
 spring:
   thymeleaf:
     cache: false
+  # TODO 2. create (test) user
+  security:
+    user:
+      name: user
+      password: 42
+    # TODO 6. configure SSO
+    oauth2:
+      client:
+        registration:
+          # https://console.cloud.google.com/apis/credentials?authuser=1&project=triple-student-420520&supportedpurview=project
+          google:
+            # TODO: DO NOT CHECK IN!
+            client-id: NOPE
+            client-secret: NOPE
+server:
+  servlet:
+    session:
+      persistent: false
