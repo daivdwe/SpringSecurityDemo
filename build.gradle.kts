@@ -13,12 +13,12 @@ repositories {
 }
 
 dependencies {
-    // TODO 1. spring sec:
     // makes everything "private" (which is good)
     // login with user & password (generated in console)
+    //??: 1. spring sec:
     implementation("org.springframework.boot:spring-boot-starter-security")
-    // TODO 5. spring oauth2:
     // oauth2 for SSO
+    //??: 5. spring oauth2:
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
     // spring:
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")

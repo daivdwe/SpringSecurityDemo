@@ -8,7 +8,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-// TODO 3. add security configuration
+//??: 3. add security configuration
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -25,7 +25,7 @@ public class SecurityConfiguration {
                 })
                 .formLogin(withDefaults()) // adds login form
                 .oauth2Login(withDefaults()) // adds SSO form
-                .logout((logout) -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
+                .logout(logout -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
                 .build();
     }
 }
