@@ -12,7 +12,7 @@ spring:
         registration:
           # https://console.cloud.google.com/apis/credentials?authuser=1&project=triple-student-420520&supportedpurview=project
           google:
-            #??:: DO NOT CHECK IN!
+            #??: secret - do not commit!
             client-id: NOPE
             client-secret: NOPE
 server:

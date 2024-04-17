@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+  <configuration default="false" name="SpringSecurity App" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="sec.Main" />
     <module name="SpringSecurity.main" />
     <extension name="coverage">
       <pattern>

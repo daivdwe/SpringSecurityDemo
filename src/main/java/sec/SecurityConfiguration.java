@@ -1,10 +1,11 @@
-package org.example;
+package sec;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.intercept.AuthorizationFilter;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -26,6 +27,9 @@ public class SecurityConfiguration {
                 .formLogin(withDefaults()) // adds login form
                 .oauth2Login(withDefaults()) // adds SSO form
                 .logout(logout -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
+                //??: 7. add (XFF-) Filter
+                .addFilterBefore(new Filter(), AuthorizationFilter.class) // filter request before auth
                 .build();
+        //??: continue video at 3200
     }
 }
