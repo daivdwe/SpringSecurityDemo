@@ -16,10 +16,9 @@ dependencies {
     // Doc: https://docs.spring.io/spring-security
     // makes everything "private" without config (which is good)
     // login with user & password (generated in console)
-    //??: 1. implement spring sec:
+    //??: 1. spring sec implementation
     implementation("org.springframework.boot:spring-boot-starter-security")
     // oauth2 for SSO
-    //??: 5. implement spring oauth2:
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
     // Doc: https://docs.spring.io/spring-boot/
     // spring:

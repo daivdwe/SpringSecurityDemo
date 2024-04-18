@@ -15,13 +15,13 @@ class Controller {
 
     @GetMapping("/private")
     public String privatePage(Model model, Authentication authentication) {
-        //??: 4. Greet logged in user
         model.addAttribute("name", getName(authentication));
         return "private";
     }
 
     private String getName(Authentication authentication) {
-        if (authentication == null) {
+        //??: 5. Greet logged in user
+        if (true || authentication == null) {
             return "stranger";
         }
         if (authentication.getPrincipal() instanceof OidcUser oidcUser) {
