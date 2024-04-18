@@ -19,15 +19,16 @@ public class Filter extends OncePerRequestFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Filter.class);
 
+    private static final String XFF_HEADER_NAME = "X-Forwarded-For";
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
-        final String xffHeaderName = "X-Forwarded-For";
-
-        if (request.getHeader(xffHeaderName) != null) {
-            LOGGER.warn("Illegal Header found in request: {}", xffHeaderName);
+        if (request.getHeader(XFF_HEADER_NAME) != null) {
+            LOGGER.warn("Illegal Header ({}) found in request: {}?{}", XFF_HEADER_NAME,
+                    request.getRequestURL(), request.getQueryString());
             response.sendError(HttpServletResponse.SC_FORBIDDEN,
-                    "Header " + xffHeaderName + " is not allowed!"); // Error Page
+                    "Header " + XFF_HEADER_NAME + " is not allowed!"); // Error Page
         } else {
             filterChain.doFilter(request, response); // continue with filter chain
         }

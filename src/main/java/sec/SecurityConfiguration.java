@@ -28,7 +28,7 @@ public class SecurityConfiguration {
                 .oauth2Login(withDefaults()) // adds SSO form
                 .logout(logout -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
                 //??: 7. add (XFF-) Filter
-                .addFilterBefore(new Filter(), SecurityContextHolderFilter.class) // filter before auth/logout
+                .addFilterAfter(new Filter(), SecurityContextHolderFilter.class) // filter before auth/logout
                 .build();
         //??: continue video at 3200
     }
