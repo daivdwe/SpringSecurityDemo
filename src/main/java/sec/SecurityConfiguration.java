@@ -23,9 +23,10 @@ public class SecurityConfiguration {
                 })*/
                 //??: 3. add form login
                 //.formLogin(withDefaults()) // adds login form
+                //??: 7. add sso login
                 //.oauth2Login(withDefaults()) // adds SSO form
                 .logout(logout -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
-                //??: 7. add (XFF-) Filter (show Filter)
+                //??: 8. add (XFF-) Filter (show Filter)
                 //.addFilterAfter(new Filter(), SecurityContextHolderFilter.class) // filter before auth/logout
                 .build();
         //??: continue video at 3200
