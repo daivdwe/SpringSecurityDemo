@@ -1,5 +1,6 @@
 package sec;
 
+import com.google.common.base.Strings;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,12 +26,21 @@ public class Filter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain) throws ServletException, IOException {
         if (request.getHeader(XFF_HEADER_NAME) != null) {
-            LOGGER.warn("Illegal Header ({}) found in request: {}?{}", XFF_HEADER_NAME,
-                    request.getRequestURL(), request.getQueryString());
+            LOGGER.warn("Illegal Header ({}) found in request: {}{}", XFF_HEADER_NAME,
+                    request.getRequestURL(), determineQueryString(request));
             response.sendError(HttpServletResponse.SC_FORBIDDEN,
                     "Header " + XFF_HEADER_NAME + " is not allowed!"); // Error Page
         } else {
             filterChain.doFilter(request, response); // continue with filter chain
         }
+    }
+
+    private String determineQueryString(HttpServletRequest request) {
+        String queryString = Strings.nullToEmpty(request.getQueryString());
+
+        if (queryString.isEmpty()) {
+            return queryString;
+        }
+        return "?" + queryString;
     }
 }
