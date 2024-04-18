@@ -10,6 +10,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+
+/**
+ * Test with reverse proxy or curl -H "X-Forwarded-For: 127.0.0.1" localhost:8080
+ * See reverse proxy instructions in README.md
+ */
 public class Filter extends OncePerRequestFilter {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Filter.class);
@@ -20,7 +25,6 @@ public class Filter extends OncePerRequestFilter {
         final String xffHeaderName = "X-Forwarded-For";
 
         if (request.getHeader(xffHeaderName) != null) {
-            // test with reverse proxy or curl -H "X-Forwarded-For: 127.0.0.1" localhost:8080
             LOGGER.warn("Illegal Header found in request: {}", xffHeaderName);
             response.sendError(HttpServletResponse.SC_FORBIDDEN,
                     "Header " + xffHeaderName + " is not allowed!"); // Error Page
