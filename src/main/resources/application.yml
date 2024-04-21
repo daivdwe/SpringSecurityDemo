@@ -10,7 +10,7 @@ spring:
     oauth2:
       client:
         registration:
-          # https://console.cloud.google.com/apis/credentials?authuser=1&project=triple-student-420520&supportedpurview=project
+          #TODO: create: https://console.cloud.google.com/apis/credentials
           google:
             #??: secret - do not commit!
             client-id: NOPE
