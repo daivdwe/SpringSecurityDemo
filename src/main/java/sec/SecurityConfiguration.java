@@ -9,7 +9,6 @@ import org.springframework.security.web.context.SecurityContextHolderFilter;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-//??: 3. add security configuration
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
@@ -27,9 +26,7 @@ public class SecurityConfiguration {
                 .formLogin(withDefaults()) // adds login form
                 .oauth2Login(withDefaults()) // adds SSO form
                 .logout(logout -> logout.logoutSuccessUrl("/")) // redirect to start page after logout
-                //??: 7. add (XFF-) Filter
                 .addFilterAfter(new Filter(), SecurityContextHolderFilter.class) // filter before auth/logout
                 .build();
-        //??: continue video at 3200
     }
 }

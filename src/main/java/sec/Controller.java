@@ -15,7 +15,6 @@ class Controller {
 
     @GetMapping("/private")
     public String privatePage(Model model, Authentication authentication) {
-        //??: 4. Greet logged in user
         model.addAttribute("name", getName(authentication));
         return "private";
     }

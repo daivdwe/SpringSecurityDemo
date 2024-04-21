@@ -4,7 +4,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
 }
 
-group = "org.example"
+group = "sec"
 version = "1.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -16,15 +16,12 @@ dependencies {
     // Doc: https://docs.spring.io/spring-security
     // makes everything "private" without config (which is good)
     // login with user & password (generated in console)
-    //??: 1. implement spring sec:
     implementation("org.springframework.boot:spring-boot-starter-security")
     // oauth2 for SSO
-    //??: 5. implement spring oauth2:
     implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
     // Doc: https://docs.spring.io/spring-boot/
-    // spring:
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     // guava:
     implementation("com.google.guava:guava:33.1.0-jre")

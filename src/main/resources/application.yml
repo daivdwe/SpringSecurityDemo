@@ -1,12 +1,10 @@
 spring:
   thymeleaf:
     cache: false
-  #??: 2. create (test) user
   security:
     user:
       name: user
       password: 42
-    #??: 6. configure SSO
     oauth2:
       client:
         registration:
