@@ -13,7 +13,7 @@ inspired me to create this demo.
   spring project without any security
 - [proxy-issues](https://github.com/daivdwe/SpringSecurityDemo/tree/proxy-issues): (open) proxy issue I
   encountered
-  at work tying to use this project behind a proxy server
+  at work trying to use this project behind a proxy server
 
 ## Reverse proxy with nginx to test Filter
 
