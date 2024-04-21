@@ -6,12 +6,13 @@ inspired me to create this demo.
 
 ## Branches
 
-- [master](https://github.com/daivdwe/SpringSecurity): a "secure" spring security demo application
-- [sec-demo-mode](https://github.com/daivdwe/SpringSecurity/tree/sec-demo-mode): demo mode of master -
+- [master](https://github.com/daivdwe/SpringSecurityDemo): a "secure" spring security demo application
+- [sec-demo-mode](https://github.com/daivdwe/SpringSecurityDemo/tree/sec-demo-mode): demo mode of master -
   follow ??: (custom TODO) in order and uncomment / reimplement
-- [no-sec-base](https://github.com/daivdwe/SpringSecurity/tree/no-sec-base): the "base" of this project - a
+- [no-sec-base](https://github.com/daivdwe/SpringSecurityDemo/tree/no-sec-base): the "base" of this project - a
   spring project without any security
-- [proxy-issues](https://github.com/daivdwe/SpringSecurity/tree/proxy-issues): (open) proxy issue I encountered
+- [proxy-issues](https://github.com/daivdwe/SpringSecurityDemo/tree/proxy-issues): (open) proxy issue I
+  encountered
   at work tying to use this project behind a proxy server
 
 ## Reverse proxy with nginx to test Filter
