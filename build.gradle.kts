@@ -13,9 +13,21 @@ repositories {
 }
 
 dependencies {
-    // mine:
+    // Doc: https://docs.spring.io/spring-security
+    // makes everything "private" without config (which is good)
+    // login with user & password (generated in console)
+    //??: 1. implement spring sec:
+    implementation("org.springframework.boot:spring-boot-starter-security")
+    // oauth2 for SSO
+    //??: 5. implement spring oauth2:
+    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
+    // Doc: https://docs.spring.io/spring-boot/
+    // spring:
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    // guava:
+    implementation("com.google.guava:guava:33.1.0-jre")
     // default:
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
