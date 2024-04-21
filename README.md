@@ -35,5 +35,5 @@ inspired me to create this demo.
  ```
 
 - start reverse proxy: sudo systemctl start nginx
-- Test on localhost:8042
+- test on http://localhost:8042
 - stop reverse proxy: sudo systemctl stop nginx
